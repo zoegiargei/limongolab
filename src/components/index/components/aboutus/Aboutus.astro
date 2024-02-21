@@ -1,0 +1,41 @@
+---
+import Knowmore from './Knowmore.astro';
+import { Image } from 'astro:assets';
+import ImageMushroom from '../../../../assets/img/pan-2.jpg'
+---
+<div id="aboutus"></div>
+<section class="aboutus-container">
+    <div class="aboutus-img">
+        <Image src={ImageMushroom} alt="Melina Villafañe - nutricionista" class="aboutus-img__img" />
+    </div>
+    
+    <h1 class="aboutus-title">01. About us </h1>
+    
+    <div class="aboutus-txt">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos tempore enim veniam eligendi quibusdam aspernatur error a officiis nemo eius tempora doloremque maxime alias facilis molestiae, debitis ad explicabo excepturi?
+        </p>
+
+        <div class="btn-more-info" id="btn-more-info">Knowmore</div>
+    </div>
+</section>
+
+<!-- <section class="disable-knowmore" id="section-knowmore">
+    <Knowmore />
+</section>
+
+<script>
+    const sectionKnowmore = document.getElementById("section-knowmore");
+    const btnMoreInfo = document.getElementById("btn-more-info");
+
+    btnMoreInfo?.addEventListener('click', () => {
+        if (sectionKnowmore?.classList.contains("disable-knowmore")) {
+            sectionKnowmore?.classList.remove("disable-knowmore");
+            sectionKnowmore?.classList.add('view-knowmore')
+            sectionKnowmore?.scrollIntoView({ behavior: "smooth" })
+        } else {
+            sectionKnowmore?.classList.add("disable-knowmore");
+            sectionKnowmore?.classList.remove('view-knowmore')
+        }
+    })
+</script> -->

@@ -1,0 +1,57 @@
+---
+import "./nav.scss";
+import OpenMenu from "../icons/OpenMenu.astro";
+import CloseMenu from "../icons/CloseMenu.astro";
+
+const items = [
+    {
+        item: "About us",
+        path: "#aboutus"
+    },
+    {
+        item: "NeuroGen",
+        path: "#neurogen"
+    },
+    {
+        item: "Research",
+        path: "#research"
+    }, 
+    {
+        item: "Contact",
+        path: "#contact"
+    }
+]
+---
+
+<header class="header">
+    <div class="nav-container">
+        <nav class="flex flex-bt flex-content-center">
+
+            <div class="logo-navbar">
+                LG
+            </div>
+
+            <ul class="nav-items nav-items--side" id="nav-items">
+
+                <div class="btn-close" id="btn-close">
+                    <CloseMenu />
+                </div>
+
+                <li class="nav-item nav-item-logo" id="icon-side-nav"></li>
+
+                {
+                    items.map(item => (
+                        <li class="nav-item"> <a href={item.path}>{item.item}</a> </li>
+                    ))
+                }
+                
+            </ul>
+
+            <div class="btn-open flex flex-bt" id="btn-open"> 
+                <OpenMenu />
+            </div>
+        </nav>
+    </div>
+</header>
+
+<script src="./nav.ts"></script>

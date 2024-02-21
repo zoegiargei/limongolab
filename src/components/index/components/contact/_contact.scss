@@ -1,0 +1,108 @@
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+
+    .contacts {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &__phone, &__mail {
+            @include flex-column-center();
+            margin: 5px;
+            p {
+                font-size: 12px;
+                margin: 0 0 0 10px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+    }
+
+    .social-media {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .followme {
+            position: relative;
+        }
+
+        .profiles {
+            @include flex-row-center();
+            flex-wrap: wrap;
+            gap: 30px;
+
+            div a {
+                cursor: pointer;
+                text-decoration: none;
+                color: $body-color;
+            }
+
+            div {
+                margin: 10px;
+                padding: 10px;
+                border-radius: 50px;
+                background-color: $main-green;
+
+                transition: filter .3s ease-in-out;
+                &:hover {
+                    filter: drop-shadow(5px 5px 10px $main-gray);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .contact-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas:
+        'a b'
+        ;
+        .contacts {
+            grid-area: a;
+            align-items: flex-start;
+
+            &__phone, &__mail {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                margin: 0 20px;
+                p {
+                    margin: 0;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .social-media {
+            grid-area: b;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .contact-container {
+        .contacts {
+            &__phone, &__mail {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                margin: 0 30px;
+                p {
+                    font-size: 20px;
+                    margin: 0 0 0 10px;
+                }
+            }
+        }
+    }
+}

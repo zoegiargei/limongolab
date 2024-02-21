@@ -1,0 +1,13 @@
+---
+const images = ['1', '2', '3', '4', '5']
+---
+
+<section class="container-gallery" id="gallery">
+    {
+        images.map((img) => (
+            <div class=`img-container-${img}`>
+                <img src=`/src/assets/img/img-gallery-${img}.jpg` class=`img-${img}` alt=`image-gallery-vegan-food-${img}` loading="lazy" decoding="async">
+            </div>
+        ))
+    }
+</section>

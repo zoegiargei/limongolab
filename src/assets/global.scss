@@ -1,0 +1,96 @@
+@import 'envs';
+@import 'lib';
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&family=Ultra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Titan+One&family=Ultra&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: loadPaage 0.3s ease forwards;
+    background-color: $body-color;
+
+    h1 {
+        font-size: 24px;
+        font-weight: 600;
+        color: $main-title;
+
+        font-family: "Ultra", serif;
+        font-weight: 400;
+        font-style: normal;
+
+        word-wrap: break-word;
+        overflow: hidden;
+        margin: 20px;
+    }
+
+    p {
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 200;
+        font-style: normal;
+        font-size: 12px;
+        font-weight: 400;
+        margin: 20px;
+
+        word-wrap: break-word;
+        overflow: hidden;
+    }
+    
+    ul li {
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 720px) and (max-width: 1440px) {
+    body {
+        h1 {
+            font-size: 34px;
+            margin: 30px;
+        }
+    
+        p {
+            font-size: 16px;
+            margin: 30px;
+        }
+
+        ul li {
+            font-size: 16px;
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    body {
+        h1 {
+            font-size: 38px;
+        }
+    
+        p {
+            font-size: 18px;;
+        }   
+
+        ul li {
+            font-size: 18px;
+        }
+    }
+}
+
+@keyframes loadPaage {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

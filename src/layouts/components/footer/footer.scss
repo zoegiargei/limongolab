@@ -1,0 +1,37 @@
+@import '/src/assets/envs';
+@import '/src/assets/lib';
+
+.credits {
+    border-top: 1px solid $main-green;
+    width: auto;
+    max-width: 800px;
+
+    font-size: 18px;
+    font-weight: 300;
+    color: $neutral-800;
+    background: $body-color;
+    
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    bottom: 30px;
+
+    .gesprender {
+        font-weight: 400;
+        color: $main-green;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+
+    .gesprender-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 5px;
+    }
+}

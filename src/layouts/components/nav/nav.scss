@@ -1,0 +1,155 @@
+@import '../../../assets/envs';
+@import '../../../assets/lib';
+
+.nav-container {
+    z-index: 9;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 0.9em;
+    margin: 0.5em;
+    height: 80px;
+    
+    nav {
+        .logo-navbar {
+            font-family: sans-serif;
+            font-size: 40px;
+            font-weight: 900;
+            color: $main-green;
+            margin: auto 0;
+            text-align: center;
+
+            font-family: "Ultra", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        .nav-item {
+            font-size: 18px;
+            font-weight: 300;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            
+            a {
+                text-decoration: none;
+                color: $nav-items;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    
+    .nav-container {
+        nav {
+            .nav-items--side {
+                margin: 0;
+                padding: 2.5em 0 0 0;
+            
+                width: 50%;
+                height: 100%;
+                
+                position: fixed;
+                right: 0;
+                top: 0;
+            
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+        
+                background-color: $main-green;
+
+                z-index: 9;
+        
+                .btn-close {
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    padding: 1.5em;
+                }
+            
+                .nav-item {
+                    padding: 1em;
+                    margin-left: 0.5em;
+                    font-weight: 300;
+                }
+            
+                .nav-item-logo {
+                    width: 80px;
+                    height: 80px;
+                    background: url(/src/assets/img/3.png) center/cover;
+                    background-repeat: no-repeat;
+                }
+            
+                right: -50%;
+                transition: all linear .3s;
+            }
+        
+            .active {
+                right: 0px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .nav-container {
+        padding: 0 10px;
+
+        .btn-open {
+            display: none;
+        }
+    
+        
+        .nav-items {
+            width: max-content;
+            display: block;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            .btn-close {
+                display: none;
+            }
+    
+            .nav-item-icon {
+                display: none;
+            }
+
+            .nav-item {
+                font-size: 20px;
+                margin-right: 1em;
+
+                &::after{
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    bottom: -2px;
+                    left: 0;
+                    background-color: $main-green;
+                    transform: scaleX(0);
+                    transform-origin: bottom right;
+                    transition: all ease-in-out .4s;
+                }
+            
+                &:hover{
+                    &::after{
+                        transform: scaleX(1);
+                        transform-origin: bottom left;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .nav-container {
+        .nav-items {
+            .nav-item {
+                font-size: 26px;
+            }
+        }
+    }
+}
