@@ -1,0 +1,44 @@
+---
+const articles = [{
+    title: 'Author Correction: Psilocybin microdosers demonstrate greater observed improvements in mood and mental health at one month relative to non-microdosing controls',
+    cta: 'Open',
+    path: 'https://www.nature.com/articles/s41598-022-17428-0'
+},
+{
+    title: 'Psychedelics as a Treatment for Alzheimer’s Disease Dementia',
+    cta: 'Open',
+    path: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7472664/'
+},
+{
+    title: 'Ps******** microdosers demonstrate greater observed improvements in mood and mental health at one month relative to non-microdosing controls',
+    cta: 'Open',
+    path: 'https://www.nature.com/articles/s41598-022-14512-3'
+},
+{
+    title: 'Improvement of cognitive functions by oral intake of Hericium erinaceus',
+    cta: 'Open',
+    path: 'https://www.jstage.jst.go.jp/article/biomedres/40/4/40_125/_article'
+}
+]
+---
+
+<div id="services" ></div>
+<h1 class="research-container__tlt">03. Research</h1>
+<section class="research-container">
+    {
+        articles.map((item, index) => (
+            <div class="card-container">            
+                <div class="research-container__card">
+                    <div class="research-container__card__img">
+                        <img src=`/src/assets/img/article-${index+1}.png` alt="nutrition-service-image" class="card-img" loading="lazy" decoding="async">
+                        
+                        <div class="card-img-bg"></div>
+                        <div class="card-img-cta"><a href={item.path} target="_blank">{item.cta}</a></div>
+                    </div>
+                    
+                    <h1 class="research-container__card__tlt">{item.title}</h1>
+                </div>
+            </div>
+                ))
+            }
+</section>

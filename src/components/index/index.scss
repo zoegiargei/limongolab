@@ -4,24 +4,30 @@
 @import './components/aboutus/aboutus';
 @import './components/aboutus/knowmore';
 @import './components/neurogen/neurogen';
-@import './components/ecommerce/ecommerce';
+@import './components/research/research';
 @import './components/gallery/gallery';
 @import './components/contact/contact';
 
 main {
     background-color: $body-color;
-    position: relative;
+}
 
-    div.pointer {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 1px;
-        height: 1px;
-        border-radius: 50%;
-
-        box-shadow: 0px 0px 100px 30px $main-pink;
-        pointer-events: none;
-        z-index: 1;
+@media screen and (min-width: 720px) {
+    main {
+        background-color: $body-color;
+        position: relative;
+    
+        div.pointer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 1px;
+            border-radius: 50%;
+    
+            box-shadow: 0px 0px 100px 30px $main-pink;
+            pointer-events: none;
+            z-index: 1;
+        }
     }
 }

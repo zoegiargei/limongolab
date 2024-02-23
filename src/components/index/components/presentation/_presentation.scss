@@ -2,21 +2,26 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
-    gap: 10px;
 
     .presentation-img-container {
         width: 100%;
         height: 100%;
-        margin: 30px;
+        @include flex-column-center();
         
-        .presentation-img {
+        .gif {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        /*         .presentation-img {
             width: 100%;
             height: 500px;
     
             background: url(/src/assets/img/mushroom-1.jpg) center/cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
-        }
+        } */
     }
 
 }
@@ -31,11 +36,9 @@
             position: relative;
             bottom: -40%;
         }
-
+        
+        /* 
         .presentation-img-container {
-            .presentation-img {
-                height: 100%;
-            }
-        }
+        } */
     }
 }

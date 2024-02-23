@@ -1,5 +1,5 @@
 ---
-import Nav from '../../../../layouts/components/nav/Nav.astro';
+import Nav from "../../../../layouts/components/nav/Nav.astro";
 ---
 
 <section class="presentation-container">
@@ -7,15 +7,44 @@ import Nav from '../../../../layouts/components/nav/Nav.astro';
         <Nav />
         <div class="presentation-txt">
             <h1>Limongo.lab</h1>
-            <p>Mundo Fungi. <br />
-                Son descomposición, equilibrio y creación.
-                Nutrición para nuestros sistemas neuronales y el entorno natural.
-                Ofrecemos salud sustentable.
+            <p>
+                Mundo Fungi. <br />
+                 Son descomposición, equilibrio y creación. <br />
+                 Nutrición para nuestros sistemas neuronales y el entorno
+                natural. <br />
+                 Ofrecemos salud sustentable.
             </p>
         </div>
     </div>
 
-    <div class="presentation-img-container">
-        <div class="presentation-img"></div>
+    <div class="presentation-img-container" id="gif">
+        <!-- <div class="presentation-img"></div> -->
     </div>
 </section>
+
+<script>
+    const API_KEY: string = "fW9nblCgDsWpCAkVQj1CsZygi3jbx1rX";
+    const divGif: HTMLElement | null = document.getElementById("gif");
+
+    const GetImage = async () => {
+        try {
+            const api_key = API_KEY;
+            const res: Response = await fetch(
+                `https://api.giphy.com/v1/gifs/random?api_key=${api_key}`,
+            );
+            const { data } = await res.json();
+            const { url } = data.images.original;
+            console.log(url);
+
+            if (divGif) {
+                divGif.innerHTML = `
+                    <img src=${url} class="gif" alt="Random gifts">
+                `
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    GetImage();
+</script>
